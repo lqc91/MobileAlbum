@@ -1,0 +1,53 @@
+/* Firefox 下报错
+ * Stylesheets without CSSOM changes reparsed to check for errors.
+ * Refresh the page to also see errors from stylesheets changed from CSSOM and from style attributes.
+ * tap 事件不响应
+ * 刷新后不再报错，tap事件可相应
+ * Chrome下无此问题
+ * 请问是什么原因造成的？
+ * 如何解决？
+ * 谢谢
+ */
+
+html,
+body {
+  /* reset */
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+.album {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+.album {
+  /* 相册 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  font-size: 0;
+}
+.album .album__item {
+  /* 图片 */
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: .13rem;
+  margin: .27rem 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: .08rem solid #cc8833;
+  background-clip: content-box;
+}
+.album .mask {
+  /* 遮罩 */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
